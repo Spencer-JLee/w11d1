@@ -1,0 +1,11 @@
+.revealed{
+  border-style: inset;
+}
+
+.tile{
+  height: 20px;
+  width: 20px;
+  background-color: lightgray;
+  float: left;
+  border-style: outset;
+}

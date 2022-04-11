@@ -1,7 +1,8 @@
 import * as Minesweeper from "./minesweeper.js";
 import React from "react";
 import ReactDOM from "react-dom";
-import Board from "./board.js";
+import Board from "./board.jsx";
+import Tile from "./tile.jsx";
 
 class Game extends React.Component {
   constructor(props){
@@ -13,13 +14,21 @@ class Game extends React.Component {
     this.render = this.render.bind(this);
   }
 
-  updateGame(){
-
+  updateGame(tile, flagging){
+    if(flagging){
+      tile.toggleFlag();
+    }
+    else{
+      tile.explore();
+    }
+    this.setState(
+      { board: this.state.board}
+    );
   }
 
   render(){
     return (
-      <Board board={this.state.board} updateGame={this.updateGame}/>;
+      <Board board={this.state.board} updateGame={this.updateGame}/>
     );
   }
 }

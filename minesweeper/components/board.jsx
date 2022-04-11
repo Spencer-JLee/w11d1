@@ -18,10 +18,10 @@ class Board extends React.Component{
   }
 
   createTiles(){
-    const tiles = this.props.board.map((row, idx) =>{
-      <div>
+    const tiles = this.props.board.grid.map((row, idx) =>{
+      <div key={row + idx}>
         {row.map((ele, j) => {
-          <Tile tile={ele} updateGame={this.props.updateGame} key={`idx` + `j`}/>
+          <Tile tile={ele} updateGame={this.props.updateGame} key={ele + `j`}/>
         })}
       </div>
     });
