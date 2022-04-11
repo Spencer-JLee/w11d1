@@ -5,5 +5,6 @@ import Tile from "./tile";
 import Game from "./game";
 
 document.addEventListener("DOMContentLoaded", () =>{
-  ReactDOM.render(<Game/>, document.getElementById("main"));
+  const root = document.getElementById("main")
+  ReactDOM.render(<Game />, root);
 });
